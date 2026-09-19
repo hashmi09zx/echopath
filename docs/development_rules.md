@@ -10,6 +10,7 @@ To ensure a structured, high-quality, and reproducible development process, all 
 * Do not implement future phases early or bypass intermediate phases.
 
 ## 2. Model Training Responsibilities
+* Antigravity generates the training code; the user executes and analyzes the actual training.
 * Model training will be performed by the user, **not** by the AI assistant.
 * The AI assistant may generate training scripts, notebooks, or instructions, but the actual execution of training remains with the user.
 * Heavy model training should preferably be executed in Google Colab with GPU support.

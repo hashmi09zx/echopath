@@ -17,7 +17,7 @@ __pycache__/
 .coverage
 htmlcov/
 
-# PyTorch / Model Checkpoints & Exports
+# PyTorch / Model Weights & Checkpoints
 *.pt
 *.pth
 *.onnx
@@ -25,15 +25,13 @@ htmlcov/
 *.engine
 *.bin
 *.safetensors
-models/detection/*
-!models/detection/.gitkeep
-models/depth/*
-!models/depth/.gitkeep
 checkpoints/
 
-# Datasets & Data Storage
-data/*
-!data/.gitkeep
+# Datasets & Data Storage (ignore raw/processed dataset directories & archives)
+data/coco/
+data/mobility_coco/
+data/raw/
+data/processed/
 *.zip
 *.tar.gz
 *.tgz
@@ -47,8 +45,14 @@ output/
 outputs/
 logs/
 *.log
-eval/*
-!eval/.gitkeep
+
+# Loose Media / Temporary Test Files
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.avi
+*.mov
 
 # Flutter / Dart
 .dart_tool/
