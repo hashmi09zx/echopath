@@ -14,7 +14,8 @@
   * Phase 2B — Spatial Position Mapping — NOT STARTED
 * Phase 3 — Multi-Object Tracking — COMPLETE
   * Phase 3A — V0 ByteTrack Object Tracker — COMPLETE
-* Phase 4 — Depth Estimation + Fusion — NOT STARTED
+* Phase 4 — Spatial Position / Scene Understanding — COMPLETE
+  * Phase 4A — V0 Spatial Position Mapping — COMPLETE
 * Phase 5 — Priority / Danger Scoring — NOT STARTED
 * Phase 6 — NLG + TTS — NOT STARTED
 * Phase 7 — Flutter Mobile App — NOT STARTED

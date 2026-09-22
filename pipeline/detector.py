@@ -33,14 +33,16 @@ class Detection:
     class_id: int = -1
     distance_m: Optional[float] = None
     track_id: Optional[int] = None
+    position: Optional[str] = None
 
     def __repr__(self) -> str:
         x1, y1, x2, y2 = self.bbox
         id_str = f" [ID:{self.track_id}]" if self.track_id is not None else ""
         dist_str = f" [{self.distance_m:.2f}m]" if self.distance_m is not None else ""
+        pos_str = f" [{self.position}]" if self.position is not None else ""
         return (
             f"Detection(class='{self.class_name}'{id_str}, conf={self.confidence:.2f}, "
-            f"bbox=({x1:.1f}, {y1:.1f}, {x2:.1f}, {y2:.1f}){dist_str})"
+            f"bbox=({x1:.1f}, {y1:.1f}, {x2:.1f}, {y2:.1f}){dist_str}{pos_str})"
         )
 
 
