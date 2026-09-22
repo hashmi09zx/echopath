@@ -6,7 +6,7 @@ Designed to remain completely decoupled from tracking, depth estimation, or mobi
 """
 
 from dataclasses import dataclass
-from typing import List, Tuple, Union
+from typing import List, Optional, Tuple, Union
 import numpy as np
 import torch
 from ultralytics import YOLO
@@ -31,10 +31,17 @@ class Detection:
     confidence: float
     bbox: Tuple[float, float, float, float]  # (x1, y1, x2, y2) in pixel coordinates
     class_id: int = -1
+    distance_m: Optional[float] = None
+    track_id: Optional[int] = None
 
     def __repr__(self) -> str:
         x1, y1, x2, y2 = self.bbox
-        return f"Detection(class='{self.class_name}', conf={self.confidence:.2f}, bbox=({x1:.1f}, {y1:.1f}, {x2:.1f}, {y2:.1f}))"
+        id_str = f" [ID:{self.track_id}]" if self.track_id is not None else ""
+        dist_str = f" [{self.distance_m:.2f}m]" if self.distance_m is not None else ""
+        return (
+            f"Detection(class='{self.class_name}'{id_str}, conf={self.confidence:.2f}, "
+            f"bbox=({x1:.1f}, {y1:.1f}, {x2:.1f}, {y2:.1f}){dist_str})"
+        )
 
 
 class Detector:
